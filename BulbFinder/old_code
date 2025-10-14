@@ -1,0 +1,27 @@
+#BEST CONFIDENCE
+"""
+        #This part bellow uses claude.ai
+        # Get all confidences and find the index of the highest one
+        confidences = result.boxes.conf.cpu().numpy()
+
+        #This should stop the confidences from breaking the code?
+        if len(confidences) == 0:
+            continue
+
+        best_idx = confidences.argmax()
+
+        # Get the best detection details
+        best_confidence = confidences[best_idx]
+        best_class_id = int(result.boxes.cls[best_idx].cpu().numpy())
+        best_class_name = result.names[best_class_id]
+        #End of claude.ai
+
+        x1,y1,x2,y2 = result.boxes.xyxy[best_idx].tolist()
+        center_x = (x1 + x2) / 2.0
+        center_y = (y1 + y2) / 2.0
+
+        # Move mouse to bulb
+        # We need to move the mouse down way the cursor does not block the bulb messing up the confidence.
+        # We could start training a cursor bulb class as well.
+        pydirectinput.moveTo(int(center_x), int(center_y) + 50, relative=True)
+        """
