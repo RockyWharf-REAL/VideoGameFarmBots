@@ -30,7 +30,7 @@ def find_bulbs():
     screenshot = Image.frombytes("RGB", screenshot.size, screenshot.tobytes())
 
     # Try to Find all bulbs (hopefully) on screen
-    results = model([screenshot], conf=.3, save=False)
+    results = model([screenshot], conf=0.25, save=False)
     return results
 
 def rep_cam():
@@ -92,5 +92,6 @@ model = YOLO("Datasets/v2/best.pt")
 # Time to move over to the program.
 time.sleep(2)
 
+print("Press q to quit.")
 pydirectinput.keyDown('w')
 main()
