@@ -10,3 +10,5 @@ Here are the current bots available:
   <li>BomberRoyal Bot</li>
   <li>Block farming with a Dragon</li>
 </ul>
+
+Honestly, it is not to hard to figure out what game this is. Everything the bots would be good for kind of got thrown out the window when a mass duplication bug happened. I had a file replacement at one point for the sun bulbs, but never did move it over to the github. Also I recently wiped my PC so it is gone for good.
